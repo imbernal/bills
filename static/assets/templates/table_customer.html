@@ -1,0 +1,74 @@
+<div class="row" ng-controller="mainController">
+    <div class="col-md-12">
+
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption">
+                    {{table_name}}
+                </div>
+                <div class="tools">
+                    <a href="#" ng-click="showModalforNew($event)"><i class="fa fa-plus" aria-hidden="true"> Add New</i></a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Reference
+                            </th>
+                            <th>
+                                Pantai Id
+                            </th>
+                            <th>
+                                Material
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody ng-repeat="customer in customers">
+                        <tr>
+
+                            <td>
+                                {{customer.name}}
+                            </td>
+                            <td>
+                                {{customer.phone}}
+                            </td>
+                            <td>
+                                {{customer.reference}}
+                            </td>
+                            <td>
+                                {{customer.pantaiId}}
+                            </td>
+                            <td>
+                                {{customer.material}}
+                            </td>
+                            <td>
+                                {{customer.date | date}}
+                            </td>
+                            <td>
+                                <a href="#" ng-click="deleteCustomer(customer._id, $event)"><i class="fa fa-trash"  id="trash" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
